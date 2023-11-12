@@ -12,13 +12,13 @@ class Client:
         """
         Sends a message to the client.
         """
-        self.socket.sendall(message.encode('utf-8'))
+        self.socket.send(message.encode())
 
     def receive_message(self):
         """
         Receives a message from the client.
         """
-        return self.socket.recv(1024).decode('utf-8')
+        return self.socket.recv(1024).decode()
 
     def disconnect(self):
         """
